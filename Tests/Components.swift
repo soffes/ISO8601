@@ -53,7 +53,7 @@ struct Components {
 		return components
 	}
 	
-	init(string: String, year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil, timeZoneOffset: Int? = nil) {
+	init(string: String, year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil, timeZoneOffset: NSTimeInterval? = nil) {
 		self.string = string
 		self.year = year
 		self.month = month
@@ -63,7 +63,7 @@ struct Components {
 		self.second = second
 		
 		if let timeZoneOffset = timeZoneOffset {
-			self.timeZone = NSTimeZone(forSecondsFromGMT: timeZoneOffset * 3600)
+			self.timeZone = NSTimeZone(forSecondsFromGMT: Int(timeZoneOffset * 3600))
 		}
 	}
 }

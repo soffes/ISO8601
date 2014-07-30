@@ -20,6 +20,7 @@ class SerializationTests: XCTestCase {
 			Components(string: "1999-05-23 23:55:21", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
 			Components(string: "1999-05-23 23:55:21+09:00", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
 			Components(string: "1999-05-23T23:55:21-09:00", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
+			Components(string: "1999-05-23T23:55:21-09:30", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9.5),
 			Components(string: "1999-05-23 23:55:21Z", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
 			Components(string: "1999-05-23T23:55:21Z", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
 			Components(string: "-1999-05-23T23:55:21Z", year: -1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),

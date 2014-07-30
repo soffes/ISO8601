@@ -118,7 +118,7 @@
 		return dateComponents;
 	}
 	
-	timeZoneOffset += timeZoneOffsetMinute * 60;
+	timeZoneOffset += timeZoneOffsetMinute * 60 * ([sign isEqualToString:@"-"] ? -1 : 1);
 	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
 	
 	return dateComponents;
