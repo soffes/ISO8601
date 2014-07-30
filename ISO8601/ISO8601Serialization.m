@@ -10,94 +10,137 @@
 
 @implementation ISO8601Serialization
 
-+ (NSDate *)dateWithISO8601String:(NSString *)string {
-	// Return nil if nil is given
-	if (!string || [string isEqual:[NSNull null]]) {
++ (NSDateComponents *)dateComponentsForString:(NSString *)string {
+	NSScanner *scanner = [[NSScanner alloc] initWithString:string];
+	scanner.charactersToBeSkipped = nil;
+	
+	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+	
+	// Year
+	NSInteger year;
+	if (![scanner scanInteger:&year]) {
 		return nil;
 	}
+	dateComponents.year = year;
 	
-	// Parse number
-	if ([string isKindOfClass:[NSNumber class]]) {
-		return [NSDate dateWithTimeIntervalSince1970:[(NSNumber *)string doubleValue]];
+	// Month
+	if (![scanner scanString:@"-" intoString:nil]) {
+		return dateComponents;
 	}
 	
-	// Parse string
-	else if ([string isKindOfClass:[NSString class]]) {
-		const char *str = [string cStringUsingEncoding:NSUTF8StringEncoding];
-		size_t len = strlen(str);
-		if (len == 0) {
-			return nil;
-		}
-		
-		struct tm tm;
-		char newStr[25] = "";
-		BOOL hasTimezone = NO;
-		
-		// 2014-03-30T09:13:00Z
-		if (len == 20 && str[len - 1] == 'Z') {
-			strncpy(newStr, str, len - 1);
-		}
-		
-		// 2014-03-30T09:13:00-07:00
-		else if (len == 25 && str[22] == ':') {
-			strncpy(newStr, str, 19);
-			hasTimezone = YES;
-		}
-		
-		// 2014-03-30T09:13:00.000Z
-		else if (len == 24 && str[len - 1] == 'Z') {
-			strncpy(newStr, str, 19);
-		}
-		
-		// 2014-03-30T09:13:00.000-07:00
-		else if (len == 29 && str[26] == ':') {
-			strncpy(newStr, str, 19);
-			hasTimezone = YES;
-		}
-		
-		// Poorly formatted timezone
-		else {
-			strncpy(newStr, str, len > 24 ? 24 : len);
-		}
-		
-		// Timezone
-		size_t l = strlen(newStr);
-		if (hasTimezone) {
-			strncpy(newStr + l, str + len - 6, 3);
-			strncpy(newStr + l + 3, str + len - 2, 2);
-		} else {
-			strncpy(newStr + l, "+0000", 5);
-		}
-		
-		// Add null terminator
-		newStr[sizeof(newStr) - 1] = 0;
-		
-		if (strptime(newStr, "%FT%T%z", &tm) == NULL) {
-			return nil;
-		}
-		
-		time_t t;
-		t = mktime(&tm);
-		
-		return [NSDate dateWithTimeIntervalSince1970:t];
+	NSInteger month;
+	if (![scanner scanInteger:&month]) {
+		return dateComponents;
+	}
+	dateComponents.month = month;
+	
+	// Day
+	if (![scanner scanString:@"-" intoString:nil]) {
+		return dateComponents;
 	}
 	
-	NSAssert1(NO, @"Failed to parse date: %@", string);
+	NSInteger day;
+	if (![scanner scanInteger:&day]) {
+		return dateComponents;
+	}
+	dateComponents.day = day;
 	
-	return nil;
+	// Time
+	if (![scanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"T "] intoString:nil]) {
+		return dateComponents;
+	}
+	
+	// Hour
+	NSInteger hour;
+	if (![scanner scanInteger:&hour]) {
+		return dateComponents;
+	}
+	dateComponents.hour = hour;
+	
+	// Minute
+	if (![scanner scanString:@":" intoString:nil]) {
+		return dateComponents;
+	}
+	
+	NSInteger minute;
+	if (![scanner scanInteger:&minute]) {
+		return dateComponents;
+	}
+	dateComponents.minute = minute;
+	
+	// Second
+	if (![scanner scanString:@":" intoString:nil]) {
+		return dateComponents;
+	}
+	
+	NSInteger second;
+	if (![scanner scanInteger:&second]) {
+		return dateComponents;
+	}
+	dateComponents.second = second;
+	
+	// Time zone
+	NSUInteger scannerLocation = scanner.scanLocation;
+	
+	// UTC
+	[scanner scanUpToString:@"Z" intoString:nil];
+	if ([scanner scanString:@"Z" intoString:nil]) {
+		return dateComponents;
+	}
+	
+	// Move back to end of seconds
+	scanner.scanLocation = scannerLocation;
+	
+	// Look for offset
+	NSCharacterSet *signs = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
+	[scanner scanUpToCharactersFromSet:signs intoString:nil];
+	NSString *sign;
+	if (![scanner scanCharactersFromSet:signs intoString:&sign]) {
+		return dateComponents;
+	}
+	
+	// Offset hour
+	NSInteger timeZoneOffset = 0;
+	NSInteger timeZoneOffsetHour;
+	if (![scanner scanInteger:&timeZoneOffsetHour]) {
+		return dateComponents;
+	}
+	timeZoneOffset = timeZoneOffsetHour * 3600 * ([sign isEqualToString:@"-"] ? -1 : 1);
+	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
+	
+	// Offset minute
+	if (![scanner scanString:@":" intoString:nil]) {
+		return dateComponents;
+	}
+	
+	NSInteger timeZoneOffsetMinute;
+	if (![scanner scanInteger:&timeZoneOffsetMinute]) {
+		return dateComponents;
+	}
+	
+	timeZoneOffset += timeZoneOffsetMinute * 60;
+	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
+	
+	return dateComponents;
 }
 
 
-+ (NSString *)ISO8601StringWithDate:(NSDate *)date {
-	struct tm *timeinfo;
-	char buffer[80];
++ (NSString *)stringForDateComponents:(NSDateComponents *)components {	
+	NSString *string = [[NSString alloc] initWithFormat:@"%04i-%02i-%02iT%02i:%02i:%02i", components.year, components.month,
+						components.day, components.hour, components.minute, components.second];
 	
-	time_t rawtime = (time_t)[date timeIntervalSince1970];
-	timeinfo = gmtime(&rawtime);
+	NSTimeZone *timeZone = components.timeZone;
+	if (timeZone.secondsFromGMT != 0) {
+		NSInteger hoursOffset = timeZone.secondsFromGMT / 3600;
+		
+		// TODO: Assuming whole hour offsets at the moment
+		NSUInteger secondsOffset = 0;
+		
+		NSString *sign = (hoursOffset >= 0) ? @"+" : @"-";
+		return [string stringByAppendingFormat:@"%@%02i:%02i", sign, abs(hoursOffset), secondsOffset];
+	}
 	
-	strftime(buffer, 80, "%Y-%m-%dT%H:%M:%SZ", timeinfo);
-	
-	return [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
+	return [string stringByAppendingString:@"Z"];
 }
 
 @end

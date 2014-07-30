@@ -10,7 +10,13 @@
 
 @interface ISO8601Serialization : NSObject
 
-+ (NSString *)ISO8601StringWithDate:(NSDate *)date;
-+ (NSDate *)dateWithISO8601String:(NSString *)string;
+#pragma mark - Reading
+
++ (NSDateComponents *)dateComponentsForString:(NSString *)string;
+
+
+#pragma mark - Writing
+
++ (NSString *)stringForDateComponents:(NSDateComponents *)components;
 
 @end

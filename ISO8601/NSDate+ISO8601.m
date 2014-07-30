@@ -11,13 +11,45 @@
 
 @implementation NSDate (ISO8601)
 
+#pragma mark - Reading
+
 + (NSDate *)dateWithISO8601String:(NSString *)string {
-	return [ISO8601Serialization dateWithISO8601String:string];
+	return [self dateWithISO8601String:string timeZone:nil usingCalendar:nil];
 }
 
 
++ (NSDate *)dateWithISO8601String:(NSString *)string timeZone:(inout NSTimeZone **)timeZone usingCalendar:(NSCalendar *)calendar {
+	NSDateComponents *components = [ISO8601Serialization dateComponentsForString:string];
+	
+	if (!calendar) {
+		calendar = [NSCalendar currentCalendar];
+	}
+	
+	*timeZone = components.timeZone;
+	
+	return [calendar dateFromComponents:components];
+}
+
+
+#pragma mark - Writing
+
 - (NSString *)ISO8601String {
-	return [ISO8601Serialization ISO8601StringWithDate:self];
+	return [self ISO8601StringWithTimeZone:nil usingCalendar:nil];
+}
+
+
+- (NSString *)ISO8601StringWithTimeZone:(NSTimeZone *)timeZone usingCalendar:(NSCalendar *)calendar {
+	if (!calendar) {
+		calendar = [NSCalendar currentCalendar];
+	}
+	
+	NSCalendarUnit units = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
+		NSCalendarUnitMinute | NSCalendarUnitSecond;
+	
+	NSDateComponents *dateComponents = [calendar components:units fromDate:self];
+	dateComponents.timeZone = timeZone;
+	
+	return [ISO8601Serialization stringForDateComponents:dateComponents];
 }
 
 @end

@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214B54AE19899B2400980A0B /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
+		214B54AF19899B2600980A0B /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3DD19894F4600322041 /* ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3DC19894F4600322041 /* ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3E319894F4600322041 /* ISO8601.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3A3D719894F4600322041 /* ISO8601.framework */; };
 		21B3A3F519894F9C00322041 /* ISO8601Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3F319894F9C00322041 /* ISO8601Serialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3F619894F9C00322041 /* ISO8601Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3F419894F9C00322041 /* ISO8601Serialization.m */; };
-		21B3A3FD19894FB900322041 /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21B3A3FE19894FB900322041 /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
-		21F67C101989501C008D6B22 /* ISO8601Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3F419894F9C00322041 /* ISO8601Serialization.m */; };
-		21F67C121989501C008D6B22 /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
 		21F67C1619895027008D6B22 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F67C1419895027008D6B22 /* Info.plist */; };
-		21F67C1719895027008D6B22 /* ISO8601Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F67C1519895027008D6B22 /* ISO8601Tests.m */; };
+		21F67C1719895027008D6B22 /* ISO8601Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F67C1519895027008D6B22 /* ISO8601Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +44,7 @@
 		21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601.h"; sourceTree = "<group>"; };
 		21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601.m"; sourceTree = "<group>"; };
 		21F67C1419895027008D6B22 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21F67C1519895027008D6B22 /* ISO8601Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601Tests.m; sourceTree = "<group>"; };
+		21F67C1519895027008D6B22 /* ISO8601Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,7 @@
 		21F67C1319895027008D6B22 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				21F67C1519895027008D6B22 /* ISO8601Tests.m */,
+				21F67C1519895027008D6B22 /* ISO8601Tests.swift */,
 				21F67C1419895027008D6B22 /* Info.plist */,
 			);
 			path = Tests;
@@ -123,8 +121,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214B54AF19899B2600980A0B /* NSDate+ISO8601.h in Headers */,
 				21B3A3F519894F9C00322041 /* ISO8601Serialization.h in Headers */,
-				21B3A3FD19894FB900322041 /* NSDate+ISO8601.h in Headers */,
 				21B3A3DD19894F4600322041 /* ISO8601.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B3A3F619894F9C00322041 /* ISO8601Serialization.m in Sources */,
-				21B3A3FE19894FB900322041 /* NSDate+ISO8601.m in Sources */,
+				214B54AE19899B2400980A0B /* NSDate+ISO8601.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,9 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21F67C101989501C008D6B22 /* ISO8601Serialization.m in Sources */,
-				21F67C1719895027008D6B22 /* ISO8601Tests.m in Sources */,
-				21F67C121989501C008D6B22 /* NSDate+ISO8601.m in Sources */,
+				21F67C1719895027008D6B22 /* ISO8601Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +380,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ISO8601Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -397,7 +394,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ISO8601Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
