@@ -126,8 +126,9 @@
 
 
 + (NSString *)stringForDateComponents:(NSDateComponents *)components {	
-	NSString *string = [[NSString alloc] initWithFormat:@"%04i-%02i-%02iT%02i:%02i:%02i", components.year, components.month,
-						components.day, components.hour, components.minute, components.second];
+	NSString *string = [[NSString alloc] initWithFormat:@"%04li-%02i-%02iT%02i:%02i:%02i", (long)components.year,
+						(int)components.month, (int)components.day, (int)components.hour, (int)components.minute,
+						(int)components.second];
 	
 	NSTimeZone *timeZone = components.timeZone;
 	if (timeZone.secondsFromGMT != 0) {
@@ -137,7 +138,7 @@
 		NSUInteger secondsOffset = 0;
 		
 		NSString *sign = (hoursOffset >= 0) ? @"+" : @"-";
-		return [string stringByAppendingFormat:@"%@%02i:%02i", sign, abs(hoursOffset), secondsOffset];
+		return [string stringByAppendingFormat:@"%@%02i:%02i", sign, abs((int)hoursOffset), (int)secondsOffset];
 	}
 	
 	return [string stringByAppendingString:@"Z"];
