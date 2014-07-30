@@ -15,4 +15,4 @@ FOUNDATION_EXPORT double ISO8601VersionNumber;
 FOUNDATION_EXPORT const unsigned char ISO8601VersionString[];
 
 #import <ISO8601/ISO8601Serialization.h>
-//#import <ISO8601/NSDate+ISO8601.h>
+#import <ISO8601/NSDate+ISO8601.h>

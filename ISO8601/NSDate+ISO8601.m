@@ -25,7 +25,14 @@
 		calendar = [NSCalendar currentCalendar];
 	}
 	
-	*timeZone = components.timeZone;
+	NSTimeZone *UTCTimeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+	
+	if (timeZone) {
+		*timeZone = components.timeZone ? components.timeZone : UTCTimeZone;
+	}
+	
+	// Use a UTC calendar to generate the date
+	calendar.timeZone = UTCTimeZone;
 	
 	return [calendar dateFromComponents:components];
 }
@@ -34,7 +41,7 @@
 #pragma mark - Writing
 
 - (NSString *)ISO8601String {
-	return [self ISO8601StringWithTimeZone:nil usingCalendar:nil];
+	return [self ISO8601StringWithTimeZone:[NSTimeZone localTimeZone] usingCalendar:nil];
 }
 
 
@@ -43,6 +50,12 @@
 		calendar = [NSCalendar currentCalendar];
 	}
 	
+	if (timeZone) {
+		calendar.timeZone = timeZone;
+	} else {
+		calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+	}
+		
 	NSCalendarUnit units = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
 		NSCalendarUnitMinute | NSCalendarUnitSecond;
 	

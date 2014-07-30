@@ -24,7 +24,7 @@
 /**
  Returns a string representation of the receiver in ISO8601 format.
  
- @return A string representation of the receiver in ISO8601 format in UTC.
+ @return A string representation of the receiver in ISO8601 format in the local time zone.
  */
 - (NSString *)ISO8601String;
 

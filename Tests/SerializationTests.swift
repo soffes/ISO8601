@@ -40,6 +40,10 @@ class SerializationTests: XCTestCase {
 			
 			// TODO: Support missing dashes in date
 //			Components(string: "19990523T23:55:21Z", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
+			
+			// TODO: Support 00:00 in place of Z
+//			Components(string: "1999-05-19T23:55:21+00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
+//			Components(string: "1999-05-19T23:55:21-00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
 		]
 		
 		for dateTest in dateTests {
