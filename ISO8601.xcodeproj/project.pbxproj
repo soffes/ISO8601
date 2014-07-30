@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		214B54AE19899B2400980A0B /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
 		214B54AF19899B2600980A0B /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		214B54B11989A89D00980A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B54B01989A89D00980A0B /* DateTests.swift */; };
+		214B54B31989A8EC00980A0B /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B54B21989A8EC00980A0B /* Components.swift */; };
 		21B3A3DD19894F4600322041 /* ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3DC19894F4600322041 /* ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3E319894F4600322041 /* ISO8601.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3A3D719894F4600322041 /* ISO8601.framework */; };
 		21B3A3F519894F9C00322041 /* ISO8601Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3F319894F9C00322041 /* ISO8601Serialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3F619894F9C00322041 /* ISO8601Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3F419894F9C00322041 /* ISO8601Serialization.m */; };
 		21F67C1619895027008D6B22 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F67C1419895027008D6B22 /* Info.plist */; };
-		21F67C1719895027008D6B22 /* ISO8601Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F67C1519895027008D6B22 /* ISO8601Tests.swift */; };
+		21F67C1719895027008D6B22 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F67C1519895027008D6B22 /* SerializationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214B54B01989A89D00980A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
+		214B54B21989A8EC00980A0B /* Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		21B3A3D719894F4600322041 /* ISO8601.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISO8601.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B3A3DB19894F4600322041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21B3A3DC19894F4600322041 /* ISO8601.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISO8601.h; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 		21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601.h"; sourceTree = "<group>"; };
 		21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601.m"; sourceTree = "<group>"; };
 		21F67C1419895027008D6B22 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21F67C1519895027008D6B22 /* ISO8601Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601Tests.swift; sourceTree = "<group>"; };
+		21F67C1519895027008D6B22 /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 		21F67C1319895027008D6B22 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				21F67C1519895027008D6B22 /* ISO8601Tests.swift */,
+				21F67C1519895027008D6B22 /* SerializationTests.swift */,
+				214B54B01989A89D00980A0B /* DateTests.swift */,
+				214B54B21989A8EC00980A0B /* Components.swift */,
 				21F67C1419895027008D6B22 /* Info.plist */,
 			);
 			path = Tests;
@@ -235,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21F67C1719895027008D6B22 /* ISO8601Tests.swift in Sources */,
+				21F67C1719895027008D6B22 /* SerializationTests.swift in Sources */,
+				214B54B31989A8EC00980A0B /* Components.swift in Sources */,
+				214B54B11989A89D00980A0B /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

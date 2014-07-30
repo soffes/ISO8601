@@ -1,6 +1,6 @@
 //
-//  ISO8601Tests.swift
-//  ISO8601Tests
+//  DateTests.swift
+//  ISO8601
 //
 //  Created by Sam Soffes on 7/30/14.
 //  Copyright (c) 2014 Sam Soffes. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import ISO8601
 
-class ISO8601Tests: XCTestCase {
+class DateTests: XCTestCase {
 	
 	// MARK: - Types
 	
@@ -25,8 +25,8 @@ class ISO8601Tests: XCTestCase {
 		let timeZone: NSTimeZone?
 		
 		var dateComponents: NSDateComponents {
-			let components = NSDateComponents()
-				
+		let components = NSDateComponents()
+			
 			if let year = year {
 				components.year = year
 			}
@@ -94,17 +94,17 @@ class ISO8601Tests: XCTestCase {
 			DateTest(string: "-011985-04-12T10:15:30", year: -11985, month: 4, day: 12, hour: 10, minute: 15, second: 30),
 			DateTest(string: "02-04-12", year: 2, month: 4, day: 12),
 			DateTest(string: "0002-04-12", year: 2, month: 4, day: 12)
-
+			
 			// TODO: Support micro time
-//			DateTest(string: "2013-06-27T15:39:32.508Z", year: 2013, month: 6, day: 27, hour: 15, minute: 39, second: 32),
-//			DateTest(string: "2014-03-18T20:00:00.000-07:00", year: 2014, month: 3, day: 18, hour: 20, minute: 0, second: 0, timeZoneOffset: -7),
+			//			DateTest(string: "2013-06-27T15:39:32.508Z", year: 2013, month: 6, day: 27, hour: 15, minute: 39, second: 32),
+			//			DateTest(string: "2014-03-18T20:00:00.000-07:00", year: 2014, month: 3, day: 18, hour: 20, minute: 0, second: 0, timeZoneOffset: -7),
 			
 			// TODO: Support missing colon in time zone
-//			DateTest(string: "1999-05-23 23:55:21+0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
-//			DateTest(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
+			//			DateTest(string: "1999-05-23 23:55:21+0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
+			//			DateTest(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
 			
 			// TODO: Support missing dashes in date
-//			DateTest(string: "19990523T23:55:21Z", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
+			//			DateTest(string: "19990523T23:55:21Z", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21),
 		]
 		
 		for dateTest in dateTests {
