@@ -40,10 +40,10 @@ class SerializationTests: XCTestCase {
 //			Components(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
 			
 			// TODO: Support 0 in place of Z
-//			Components(string: "1999-05-19T23:55:21+00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
-//			Components(string: "1999-05-19T23:55:21-00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
-//			Components(string: "1999-05-19T23:55:21+0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
-//			Components(string: "1999-05-19T23:55:21-0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
+			Components(string: "1999-05-19T23:55:21+00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
+			Components(string: "1999-05-19T23:55:21-00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
+//			Components(string: "1999-05-19T23:55:21+0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
+//			Components(string: "1999-05-19T23:55:21-0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
 
 //			YYYYMMDD
 //			Components(string: "20140313", year: 2014, month: 3, day: 13),
