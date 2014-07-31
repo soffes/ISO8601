@@ -29,7 +29,7 @@ class SerializationTests: XCTestCase {
 			Components(string: "-011985-04-12", year: -11985, month: 4, day: 12),
 			Components(string: "-011985-04-12T10:15:30", year: -11985, month: 4, day: 12, hour: 10, minute: 15, second: 30),
 			Components(string: "02-04-12", year: 2, month: 4, day: 12),
-			Components(string: "0002-04-12", year: 2, month: 4, day: 12)
+			Components(string: "0002-04-12", year: 2, month: 4, day: 12),
 
 			// TODO: Support micro time
 //			Components(string: "2013-06-27T15:39:32.508Z", year: 2013, month: 6, day: 27, hour: 15, minute: 39, second: 32),
@@ -39,9 +39,72 @@ class SerializationTests: XCTestCase {
 //			Components(string: "1999-05-23 23:55:21+0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
 //			Components(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
 			
-			// TODO: Support 00:00 in place of Z
+			// TODO: Support 0 in place of Z
 //			Components(string: "1999-05-19T23:55:21+00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
 //			Components(string: "1999-05-19T23:55:21-00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
+//			Components(string: "1999-05-19T23:55:21+0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
+//			Components(string: "1999-05-19T23:55:21-0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21),
+
+//			YYYYMMDD
+//			Components(string: "20140313", year: 2014, month: 3, day: 13),
+			
+//			YYYY-MM-DD
+			Components(string: "2014-03-13", year: 2014, month: 3, day: 13),
+			
+//			hh:mm:ss[.fffff][Z][[+|-]hh:mm] & hh:mm:ss[.fffff]
+//			Components(string: "10:42:12", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.1", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.12", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.123", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.1234", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.12345", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.12345Z", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12Z", hour: 10, minute: 42, second: 12),
+//			Components(string: "10:42:12.123+07:00", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "10:42:12.123-09:30", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+//			Components(string: "10:42:12+07:00", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "10:42:12-09:30", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+			
+//			hhmmss
+//			Components(string: "104212", hour: 10, minute: 42, second: 12),
+			
+//			hhmmss[.fffff][Z][[+|-]hhmm]
+//			Components(string: "104212", hour: 10, minute: 42, second: 12),
+//			Components(string: "104212.123", hour: 10, minute: 42, second: 12),
+//			Components(string: "104212.123Z", hour: 10, minute: 42, second: 12),
+//			Components(string: "104212Z", hour: 10, minute: 42, second: 12),
+//			Components(string: "104212.123+0700", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "104212.123-0930", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+//			Components(string: "104212+0700", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "104212-0930", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+			
+//			YYYYMMDDThhmmss[.fffff]
+//			Components(string: "20140313T104212", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "20140313T104212.12345", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+			
+//			YYYY-MM-DDThh:mm:ss[.fffff]
+			Components(string: "2014-03-13T10:42:12", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "2014-03-13T10:42:12.12345", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+			
+//			YYYYMMDDThhmmss[.fffff][Z][[+|-]hhmm]
+//			Components(string: "20140313104212", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "20140313104212.123", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "20140313104212.123Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "20140313104212Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "20140313104212.123+0700", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "20140313104212.123-0930", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+//			Components(string: "20140313104212+0700", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "20140313104212-0930", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+			
+//			YYYY-MM-DDThh:mm:ss[.fffff][Z][[+|]hh:mm
+			Components(string: "2014-03-13T10:42:12", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "2014-03-13T10:42:12.123", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "2014-03-13T10:42:12.123Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+			Components(string: "2014-03-13T10:42:12Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
+//			Components(string: "2014-03-13T10:42:12.123+07:00", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+//			Components(string: "2014-03-13T10:42:12.123-09:30", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
+			Components(string: "2014-03-13T10:42:12+07:00", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
+			Components(string: "2014-03-13T10:42:12-09:30", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
 		]
 		
 		for dateTest in dateTests {
