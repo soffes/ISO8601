@@ -45,13 +45,13 @@ class SerializationTests: XCTestCase {
 //			Components(string: "1999-05-19T23:55:21+0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
 //			Components(string: "1999-05-19T23:55:21-0000", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
 
-//			YYYYMMDD
+//			TODO: YYYYMMDD
 //			Components(string: "20140313", year: 2014, month: 3, day: 13),
 			
 //			YYYY-MM-DD
 			Components(string: "2014-03-13", year: 2014, month: 3, day: 13),
 			
-//			hh:mm:ss[.fffff][Z][[+|-]hh:mm] & hh:mm:ss[.fffff]
+//			TODO: hh:mm:ss[.fffff][Z][[+|-]hh:mm] & hh:mm:ss[.fffff]
 //			Components(string: "10:42:12", hour: 10, minute: 42, second: 12),
 //			Components(string: "10:42:12.1", hour: 10, minute: 42, second: 12),
 //			Components(string: "10:42:12.12", hour: 10, minute: 42, second: 12),
@@ -65,10 +65,10 @@ class SerializationTests: XCTestCase {
 //			Components(string: "10:42:12+07:00", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
 //			Components(string: "10:42:12-09:30", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
 			
-//			hhmmss
+//			TODO: hhmmss
 //			Components(string: "104212", hour: 10, minute: 42, second: 12),
 			
-//			hhmmss[.fffff][Z][[+|-]hhmm]
+//			TODO: hhmmss[.fffff][Z][[+|-]hhmm]
 //			Components(string: "104212", hour: 10, minute: 42, second: 12),
 //			Components(string: "104212.123", hour: 10, minute: 42, second: 12),
 //			Components(string: "104212.123Z", hour: 10, minute: 42, second: 12),
@@ -78,15 +78,15 @@ class SerializationTests: XCTestCase {
 //			Components(string: "104212+0700", hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
 //			Components(string: "104212-0930", hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
 			
-//			YYYYMMDDThhmmss[.fffff]
+//			TODO: YYYYMMDDThhmmss[.fffff]
 //			Components(string: "20140313T104212", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "20140313T104212.12345", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 			
-//			YYYY-MM-DDThh:mm:ss[.fffff]
+//			TODO: YYYY-MM-DDThh:mm:ss[.fffff]
 			Components(string: "2014-03-13T10:42:12", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "2014-03-13T10:42:12.12345", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 			
-//			YYYYMMDDThhmmss[.fffff][Z][[+|-]hhmm]
+//			TODO: YYYYMMDDThhmmss[.fffff][Z][[+|-]hhmm]
 //			Components(string: "20140313104212", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "20140313104212.123", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "20140313104212.123Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
@@ -96,7 +96,7 @@ class SerializationTests: XCTestCase {
 //			Components(string: "20140313104212+0700", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: 7),
 //			Components(string: "20140313104212-0930", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5),
 			
-//			YYYY-MM-DDThh:mm:ss[.fffff][Z][[+|]hh:mm
+//			TODO: YYYY-MM-DDThh:mm:ss[.fffff][Z][[+|]hh:mm
 			Components(string: "2014-03-13T10:42:12", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "2014-03-13T10:42:12.123", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
 //			Components(string: "2014-03-13T10:42:12.123Z", year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12),
