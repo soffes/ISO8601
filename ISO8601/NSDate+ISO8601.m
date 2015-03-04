@@ -20,7 +20,8 @@
 
 + (NSDate *)dateWithISO8601String:(NSString *)string timeZone:(inout NSTimeZone *__autoreleasing *)timeZone usingCalendar:(NSCalendar *)calendar {
 	NSDateComponents *components = [ISO8601Serialization dateComponentsForString:string];
-	
+    if (components == nil) return nil;
+
 	if (!calendar) {
 		calendar = [NSCalendar currentCalendar];
 	}
