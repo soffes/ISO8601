@@ -105,14 +105,21 @@
 	if (![scanner scanInteger:&timeZoneOffsetHour]) {
 		return dateComponents;
 	}
+	
+	// Check for semicolon
+	BOOL semicolonExists = [scanner scanString:@":" intoString:nil];
+	if (!semicolonExists && timeZoneOffsetHour > 12) {
+		timeZoneOffsetHour /= 100;
+	}
+	
 	timeZoneOffset = timeZoneOffsetHour * 3600 * ([sign isEqualToString:@"-"] ? -1 : 1);
 	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
 	
-	// Offset minute
-	if (![scanner scanString:@":" intoString:nil]) {
+	if (!semicolonExists) {
 		return dateComponents;
 	}
 	
+	// Offset minute
 	NSInteger timeZoneOffsetMinute;
 	if (![scanner scanInteger:&timeZoneOffsetMinute]) {
 		return dateComponents;
