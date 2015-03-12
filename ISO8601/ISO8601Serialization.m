@@ -105,14 +105,21 @@
 	if (![scanner scanInteger:&timeZoneOffsetHour]) {
 		return dateComponents;
 	}
+	
+	// Check for colon
+	BOOL colonExists = [scanner scanString:@":" intoString:nil];
+	if (!colonExists && timeZoneOffsetHour > 14) {
+		timeZoneOffsetHour /= 100;
+	}
+	
 	timeZoneOffset = timeZoneOffsetHour * 3600 * ([sign isEqualToString:@"-"] ? -1 : 1);
 	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
 	
-	// Offset minute
-	if (![scanner scanString:@":" intoString:nil]) {
+	if (!colonExists) {
 		return dateComponents;
 	}
 	
+	// Offset minute
 	NSInteger timeZoneOffsetMinute;
 	if (![scanner scanInteger:&timeZoneOffsetMinute]) {
 		return dateComponents;
