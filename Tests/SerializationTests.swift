@@ -35,9 +35,12 @@ class SerializationTests: XCTestCase {
 //			Components(string: "2013-06-27T15:39:32.508Z", year: 2013, month: 6, day: 27, hour: 15, minute: 39, second: 32),
 //			Components(string: "2014-03-18T20:00:00.000-07:00", year: 2014, month: 3, day: 18, hour: 20, minute: 0, second: 0, timeZoneOffset: -7),
 			
-			// TODO: Support missing colon in time zone
-//			Components(string: "1999-05-23 23:55:21+0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
-//			Components(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
+			// Support missing colon in time zone
+			Components(string: "1999-05-23 23:55:21+0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 9),
+			Components(string: "1999-05-23 23:55:21-0900", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -9),
+			Components(string: "1999-05-23 23:55:21-1100", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: -11),
+			Components(string: "1999-05-23 23:55:21+1400", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 14),
+			Components(string: "1999-05-23 23:55:21+0000", year: 1999, month: 5, day: 23, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),
 			
 			// TODO: Support 0 in place of Z
 			Components(string: "1999-05-19T23:55:21+00:00", year: 1999, month: 5, day: 19, hour: 23, minute: 55, second: 21, timeZoneOffset: 0),

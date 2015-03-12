@@ -108,7 +108,7 @@
 	
 	// Check for semicolon
 	BOOL semicolonExists = [scanner scanString:@":" intoString:nil];
-	if (!semicolonExists && timeZoneOffsetHour > 12) {
+	if (!semicolonExists && timeZoneOffsetHour > 14) {
 		timeZoneOffsetHour /= 100;
 	}
 	
