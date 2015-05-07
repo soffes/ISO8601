@@ -1,11 +1,19 @@
 # ISO8601
 
+[![Version](https://img.shields.io/github/release/soffes/ISO8601.svg)](https://github.com/soffes/ISO8601/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ISO8601.svg)](https://cocoapods.org/pods/ISO8601)
+
 Fast [ISO8601](http://en.wikipedia.org/wiki/ISO8601) date parser and writer for iOS & Mac.
 
 
 ## Installation
 
-Simply install with [CocoaPods](https://cocoapods.org):
+[Carthage](https://github.com/carthage/carthage) is the recommended way to install ISO8601. Add the following to your Cartfile:
+
+``` ruby
+github "soffes/ISO8601"
+```
+
+You can also install with [CocoaPods](https://cocoapods.org):
 
 ``` ruby
 pod 'ISO8601'
@@ -19,7 +27,7 @@ For manual installation, I recommend adding the project as a subproject to your 
 First, import the appropriate header:
 
 ``` objc
-#import <ISO8601/ISO8601.h>
+@import ISO8601; // Use #import <ISO8601/ISO8601.h> if you're using CocoaPods
 ```
 
 This library uses `NSDateComponents` for reading and writing. Here's an example:
