@@ -61,9 +61,9 @@ struct Components {
 		self.hour = hour
 		self.minute = minute
 		self.second = second
-		
-		if let timeZoneOffset = timeZoneOffset {
-			self.timeZone = NSTimeZone(forSecondsFromGMT: Int(timeZoneOffset * 3600))
-		}
+        timeZone = timeZoneOffset.map({
+            let seconds = Int($0 * 3600)
+            return NSTimeZone(forSecondsFromGMT: seconds)
+        })
 	}
 }
