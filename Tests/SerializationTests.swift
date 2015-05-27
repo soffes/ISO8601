@@ -93,6 +93,22 @@ class SerializationTests: XCTestCase {
 		XCTAssertEqual(parse("2014-03-13T10:42:12-09:30"), components(year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12, timeZoneOffset: -9.5 * 60 * 60))
 	}
 
+	func testPartials() {
+		XCTAssertEqual(parse("2015"), components(year: 2015))
+		XCTAssertEqual(parse("2015-💩"), components(year: 2015))
+		XCTAssertEqual(parse("2015-03"), components(year: 2015, month: 3))
+		XCTAssertEqual(parse("2015-03-💩"), components(year: 2015, month: 3))
+		XCTAssertEqual(parse("2015-03-13"), components(year: 2015, month: 3, day: 13))
+		XCTAssertEqual(parse("2015-03-13-💩"), components(year: 2015, month: 3, day: 13))
+		XCTAssertEqual(parse("2015-03-13T💩"), components(year: 2015, month: 3, day: 13))
+		XCTAssertEqual(parse("2015-03-13T10"), components(year: 2015, month: 3, day: 13, hour: 10))
+		XCTAssertEqual(parse("2015-03-13T10:💩"), components(year: 2015, month: 3, day: 13, hour: 10))
+		XCTAssertEqual(parse("2015-03-13T10:42"), components(year: 2015, month: 3, day: 13, hour: 10, minute: 42))
+		XCTAssertEqual(parse("2015-03-13T10:42:💩"), components(year: 2015, month: 3, day: 13, hour: 10, minute: 42))
+		XCTAssertEqual(parse("2015-03-13T10:42:10"), components(year: 2015, month: 3, day: 13, hour: 10, minute: 42, second: 10))
+		XCTAssertEqual(parse("2015-03-13T10:42:10+💩"), components(year: 2015, month: 3, day: 13, hour: 10, minute: 42, second: 10))
+	}
+
 //	func testReadingWithoutSeparators() {
 //		XCTAssertEqual(parse("20140313"), components(year: 2014, month: 3, day: 13))
 //		XCTAssertEqual(parse("20140313T104212"), components(year: 2014, month: 3, day: 13, hour: 10, minute: 42, second: 12))
