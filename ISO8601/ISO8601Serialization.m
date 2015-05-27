@@ -67,28 +67,27 @@
 		return dateComponents;
 	}
 	dateComponents.minute = minute;
-	
+
 	// Second
-	if (![scanner scanString:@":" intoString:nil]) {
-		return dateComponents;
-	}
-	
-	NSInteger second;
-	if (![scanner scanInteger:&second]) {
-		return dateComponents;
-	}
-	dateComponents.second = second;
-	
-	// Time zone
 	NSUInteger scannerLocation = scanner.scanLocation;
-	
+	if ([scanner scanString:@":" intoString:nil]) {
+		NSInteger second;
+		if (![scanner scanInteger:&second]) {
+			return dateComponents;
+		}
+		dateComponents.second = second;
+	} else {
+		scanner.scanLocation = scannerLocation;
+	}
+
 	// UTC
+	scannerLocation = scanner.scanLocation;
 	[scanner scanUpToString:@"Z" intoString:nil];
 	if ([scanner scanString:@"Z" intoString:nil]) {
 		return dateComponents;
 	}
 	
-	// Move back to end of seconds
+	// Move back to end of time
 	scanner.scanLocation = scannerLocation;
 	
 	// Look for offset
@@ -101,7 +100,8 @@
 	
 	// Offset hour
 	NSInteger timeZoneOffset = 0;
-	NSInteger timeZoneOffsetHour;
+	NSInteger timeZoneOffsetHour = 0;
+	NSInteger timeZoneOffsetMinute = 0;
 	if (![scanner scanInteger:&timeZoneOffsetHour]) {
 		return dateComponents;
 	}
@@ -109,25 +109,16 @@
 	// Check for colon
 	BOOL colonExists = [scanner scanString:@":" intoString:nil];
 	if (!colonExists && timeZoneOffsetHour > 14) {
-		timeZoneOffsetHour /= 100;
+		timeZoneOffsetMinute = timeZoneOffsetHour % 100;
+		timeZoneOffsetHour = floor(timeZoneOffsetHour / 100);
+	} else {
+		// Offset minute
+		[scanner scanInteger:&timeZoneOffsetMinute];
 	}
-	
-	timeZoneOffset = timeZoneOffsetHour * 3600 * ([sign isEqualToString:@"-"] ? -1 : 1);
-	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
-	
-	if (!colonExists) {
-		return dateComponents;
-	}
-	
-	// Offset minute
-	NSInteger timeZoneOffsetMinute;
-	if (![scanner scanInteger:&timeZoneOffsetMinute]) {
-		return dateComponents;
-	}
-	
-	timeZoneOffset += timeZoneOffsetMinute * 60 * ([sign isEqualToString:@"-"] ? -1 : 1);
-	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset];
-	
+
+	timeZoneOffset = (timeZoneOffsetHour * 60 * 60) + (timeZoneOffsetMinute * 60);
+	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:timeZoneOffset * ([sign isEqualToString:@"-"] ? -1 : 1)];
+
 	return dateComponents;
 }
 

@@ -45,7 +45,6 @@ func components(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int?
 
 	if let timeZoneOffset = timeZoneOffset {
 		comps.timeZone = NSTimeZone(forSecondsFromGMT: Int(timeZoneOffset))
-		println("comps: \(comps)")
 	}
 	return comps
 }
