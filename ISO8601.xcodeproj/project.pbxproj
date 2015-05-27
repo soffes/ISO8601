@@ -10,7 +10,7 @@
 		214B54AE19899B2400980A0B /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
 		214B54AF19899B2600980A0B /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		214B54B11989A89D00980A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B54B01989A89D00980A0B /* DateTests.swift */; };
-		214B54B31989A8EC00980A0B /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B54B21989A8EC00980A0B /* Components.swift */; };
+		21ACD23A1B15798900F04CEF /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACD2381B15795800F04CEF /* TestHelper.swift */; };
 		21B3A3DD19894F4600322041 /* ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3DC19894F4600322041 /* ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B3A3E319894F4600322041 /* ISO8601.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3A3D719894F4600322041 /* ISO8601.framework */; };
 		21B3A3F519894F9C00322041 /* ISO8601Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3F319894F9C00322041 /* ISO8601Serialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		214B54B01989A89D00980A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
-		214B54B21989A8EC00980A0B /* Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		21ACD2381B15795800F04CEF /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		21B3A3D719894F4600322041 /* ISO8601.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISO8601.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B3A3DB19894F4600322041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21B3A3DC19894F4600322041 /* ISO8601.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISO8601.h; sourceTree = "<group>"; };
@@ -111,9 +111,9 @@
 		21F67C1319895027008D6B22 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				21ACD2381B15795800F04CEF /* TestHelper.swift */,
 				21F67C1519895027008D6B22 /* SerializationTests.swift */,
 				214B54B01989A89D00980A0B /* DateTests.swift */,
-				214B54B21989A8EC00980A0B /* Components.swift */,
 				21F67C1419895027008D6B22 /* Info.plist */,
 			);
 			path = Tests;
@@ -240,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21F67C1719895027008D6B22 /* SerializationTests.swift in Sources */,
-				214B54B31989A8EC00980A0B /* Components.swift in Sources */,
 				214B54B11989A89D00980A0B /* DateTests.swift in Sources */,
+				21ACD23A1B15798900F04CEF /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +360,7 @@
 		21B3A3EE19894F4600322041 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -370,12 +371,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		21B3A3EF19894F4600322041 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

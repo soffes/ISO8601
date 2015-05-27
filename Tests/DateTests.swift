@@ -8,7 +8,6 @@
 
 import Foundation
 import XCTest
-import ISO8601
 
 class DateTests: XCTestCase {
 	func testReading() {
