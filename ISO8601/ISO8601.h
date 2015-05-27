@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Sam Soffes. All rights reserved.
 //
 
-@import Foundation;
+#if __has_feature(modules)
+	@import Foundation;
+#else
+	#import <Foundation/Foundation.h>
+#endif
 
 //! Project version number for ISO8601.
 FOUNDATION_EXPORT double ISO8601VersionNumber;

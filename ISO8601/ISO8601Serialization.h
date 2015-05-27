@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Sam Soffes. All rights reserved.
 //
 
-@import Foundation;
+#if __has_feature(modules)
+	@import Foundation;
+#else
+	#import <Foundation/Foundation.h>
+#endif
 
 @interface ISO8601Serialization : NSObject
 
