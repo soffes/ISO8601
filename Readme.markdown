@@ -1,6 +1,6 @@
 # ISO8601
 
-[![Version](https://img.shields.io/github/release/soffes/ISO8601.svg)](https://github.com/soffes/ISO8601/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ISO8601.svg)](https://cocoapods.org/pods/ISO8601)
+[![Version](https://img.shields.io/github/release/soffes/ISO8601.svg)](https://github.com/soffes/ISO8601/releases) [![Build Status](https://travis-ci.org/soffes/ISO8601.svg?branch=master)](https://travis-ci.org/soffes/ISO8601) [![Coverage Status](https://coveralls.io/repos/soffes/ISO8601/badge.svg?branch=master)](https://coveralls.io/r/soffes/ISO8601?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ISO8601.svg)](https://cocoapods.org/pods/ISO8601)
 
 Fast [ISO8601](http://en.wikipedia.org/wiki/ISO8601) date parser and writer for iOS & Mac.
 

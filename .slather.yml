@@ -1,0 +1,4 @@
+coverage_service: coveralls
+xcodeproj: ISO8601.xcodeproj
+ignore:
+  - Tests/*
