@@ -20,7 +20,9 @@
 
 + (NSDate *)dateWithISO8601String:(NSString *)string timeZone:(inout NSTimeZone *__autoreleasing *)timeZone usingCalendar:(NSCalendar *)calendar {
 	NSDateComponents *components = [ISO8601Serialization dateComponentsForString:string];
-    if (components == nil) return nil;
+	if (components == nil) {
+		return nil;
+	}
 
 	if (!calendar) {
 		calendar = [NSCalendar currentCalendar];
@@ -50,7 +52,7 @@
 	if (!calendar) {
 		calendar = [NSCalendar currentCalendar];
 	}
-	
+
 	if (timeZone) {
 		calendar.timeZone = timeZone;
 	} else {
@@ -58,11 +60,9 @@
 	}
 		
 	NSCalendarUnit units = (NSCalendarUnit)(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
-		NSCalendarUnitMinute | NSCalendarUnitSecond);
+		NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
 	
 	NSDateComponents *dateComponents = [calendar components:units fromDate:self];
-	dateComponents.timeZone = timeZone;
-	
 	return [ISO8601Serialization stringForDateComponents:dateComponents];
 }
 

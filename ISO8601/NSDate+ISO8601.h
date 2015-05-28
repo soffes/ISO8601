@@ -17,18 +17,19 @@
 #pragma mark - Simple
 
 /**
- Returns a new UTC date represented by an ISO8601 string.
+ Returns a new date represented by an ISO8601 string.
  
  @param string An ISO8601 string.
  
- @return UTC date represented by the ISO8601 string.
+ @return A date represented by the ISO8601 string.
  */
 + (NSDate *)dateWithISO8601String:(NSString *)string;
 
 /**
  Returns a string representation of the receiver in ISO8601 format.
  
- @return A string representation of the receiver in ISO8601 format in the local time zone.
+ @return A string representation of the receiver in ISO8601 format in the current calendar's time
+	     zone.
  */
 - (NSString *)ISO8601String;
 
@@ -36,7 +37,7 @@
 #pragma mark - Advanced
 
 /**
- Returns a new UTC date represented by an ISO8601 string as well as the time zone.
+ Returns a new date represented by an ISO8601 string as well as the time zone.
  
  @param string An ISO8601 string.
  
@@ -45,7 +46,7 @@
  @param calendar The calender to use for converting the date to date components. If `nil` is specified, the current
                  calendar is used.
  
- @return UTC date represented by the ISO8601 string.
+ @return A date represented by the ISO8601 string.
  */
 + (NSDate *)dateWithISO8601String:(NSString *)string timeZone:(inout NSTimeZone **)timeZone usingCalendar:(NSCalendar *)calendar;
 

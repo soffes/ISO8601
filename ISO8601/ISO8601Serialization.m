@@ -80,10 +80,13 @@
 		scanner.scanLocation = scannerLocation;
 	}
 
-	// UTC
+	// Zulu
 	scannerLocation = scanner.scanLocation;
 	[scanner scanUpToString:@"Z" intoString:nil];
 	if ([scanner scanString:@"Z" intoString:nil]) {
+		// Z stands for the Zulu (Z in the NATO phonetic alphabet) time zone. UTC and the Zulu time
+		// zone are synonymous.
+		dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 		return dateComponents;
 	}
 	
@@ -127,8 +130,12 @@
 	NSString *string = [[NSString alloc] initWithFormat:@"%04li-%02i-%02iT%02i:%02i:%02i", (long)components.year,
 						(int)components.month, (int)components.day, (int)components.hour, (int)components.minute,
 						(int)components.second];
-	
+
 	NSTimeZone *timeZone = components.timeZone;
+	if (!timeZone) {
+		return string;
+	}
+	
 	if (timeZone.secondsFromGMT != 0) {
 		NSInteger hoursOffset = timeZone.secondsFromGMT / 3600;
 		

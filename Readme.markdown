@@ -66,7 +66,7 @@ NSString *ISO8601String = [date ISO8601StringWithTimeZone:timeZoneOrNil usingCal
 
 `NSDateComponents` is the core data structure because `NSDate` doesn't perserve time zone information well.
 
-It's worth noting that a value in the `NSDateComponents` will be `nil` if it is not in the input string. For example, `1999-05-19T23:55:21Z` will have a `nil` time zone, but `1999-05-19T23:55:21+00:00` will have a UTC time zone.
+It's worth noting that a value in the `NSDateComponents` will be `nil` if it is not in the input string. For example, `1999-05-19T23:55:21` will have a `nil` time zone, but `1999-05-19T23:55:21+00:00` and `1999-05-19T23:55:21Z` will have a UTC time zone.
 
 The `+[NSDate dateWithISO8601String:]` category will always return a UTC date. If you want a date in another time zone, you should use `+[NSDate ISO8601StringWithTimeZone:usingCalendar:]` (you may pass `nil` for the calendar parameter to use the current calendar).
 
