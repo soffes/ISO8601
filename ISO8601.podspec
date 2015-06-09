@@ -7,7 +7,6 @@ Pod::Spec.new do |spec|
   spec.source = {:git => 'https://github.com/soffes/ISO8601.git', :tag => "v#{spec.version}"}
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
 
-  spec.requires_arc = true
   spec.frameworks = 'Foundation'
-  spec.source_files = 'ISO8601'
+  spec.source_files = 'ISO8601/**/*.{h,m,swift}'
 end
