@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ISO8601-OSX.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ISO8601-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>ISO8601-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>ISO8601-watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>212539B51B1595FD00F29EF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>212539BF1B1595FD00F29EF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21B3A3D619894F4600322041</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21B3A3E119894F4600322041</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>366B5E6B1B30C311002808D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3AE36ED11BD5C3B90017A780</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

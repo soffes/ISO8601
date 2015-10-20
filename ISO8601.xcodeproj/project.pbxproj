@@ -30,6 +30,11 @@
 		366B5E761B30C381002808D3 /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B5E771B30C385002808D3 /* ISO8601Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3F419894F9C00322041 /* ISO8601Serialization.m */; };
 		366B5E781B30C385002808D3 /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
+		3A0A276F1BD7E3AC007B023D /* ISO8601Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3F419894F9C00322041 /* ISO8601Serialization.m */; };
+		3A0A27701BD7E3B0007B023D /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3A3FC19894FB900322041 /* NSDate+ISO8601.m */; };
+		3AE36EDB1BD5C47C0017A780 /* ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3DC19894F4600322041 /* ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE36EDC1BD5C4820017A780 /* ISO8601Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3F319894F9C00322041 /* ISO8601Serialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE36EDD1BD5C4870017A780 /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B3A3FB19894FB900322041 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,7 @@
 		21F67C1419895027008D6B22 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F67C1519895027008D6B22 /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 		366B5E6C1B30C311002808D3 /* ISO8601.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISO8601.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE36ED21BD5C3B90017A780 /* ISO8601.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISO8601.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AE36ECE1BD5C3B90017A780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -132,6 +145,7 @@
 				212539B61B1595FD00F29EF3 /* ISO8601.framework */,
 				212539C01B1595FD00F29EF3 /* ISO8601Tests-OSX.xctest */,
 				366B5E6C1B30C311002808D3 /* ISO8601.framework */,
+				3AE36ED21BD5C3B90017A780 /* ISO8601.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +212,16 @@
 				366B5E761B30C381002808D3 /* NSDate+ISO8601.h in Headers */,
 				366B5E751B30C381002808D3 /* ISO8601Serialization.h in Headers */,
 				366B5E741B30C381002808D3 /* ISO8601.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE36ECF1BD5C3B90017A780 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE36EDD1BD5C4870017A780 /* NSDate+ISO8601.h in Headers */,
+				3AE36EDC1BD5C4820017A780 /* ISO8601Serialization.h in Headers */,
+				3AE36EDB1BD5C47C0017A780 /* ISO8601.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +319,24 @@
 			productReference = 366B5E6C1B30C311002808D3 /* ISO8601.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		3AE36ED11BD5C3B90017A780 /* ISO8601-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE36ED91BD5C3B90017A780 /* Build configuration list for PBXNativeTarget "ISO8601-tvOS" */;
+			buildPhases = (
+				3AE36ECD1BD5C3B90017A780 /* Sources */,
+				3AE36ECE1BD5C3B90017A780 /* Frameworks */,
+				3AE36ECF1BD5C3B90017A780 /* Headers */,
+				3AE36ED01BD5C3B90017A780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ISO8601-tvOS";
+			productName = ISO8601;
+			productReference = 3AE36ED21BD5C3B90017A780 /* ISO8601.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -321,6 +363,9 @@
 					366B5E6B1B30C311002808D3 = {
 						CreatedOnToolsVersion = 7.0;
 					};
+					3AE36ED11BD5C3B90017A780 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 				};
 			};
 			buildConfigurationList = 21B3A3D119894F4600322041 /* Build configuration list for PBXProject "ISO8601" */;
@@ -340,6 +385,7 @@
 				212539B51B1595FD00F29EF3 /* ISO8601-OSX */,
 				212539BF1B1595FD00F29EF3 /* ISO8601Tests-OSX */,
 				366B5E6B1B30C311002808D3 /* ISO8601-watchOS */,
+				3AE36ED11BD5C3B90017A780 /* ISO8601-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -374,6 +420,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		366B5E6A1B30C311002808D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE36ED01BD5C3B90017A780 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,6 +480,15 @@
 			files = (
 				366B5E771B30C385002808D3 /* ISO8601Serialization.m in Sources */,
 				366B5E781B30C385002808D3 /* NSDate+ISO8601.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE36ECD1BD5C3B90017A780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0A276F1BD7E3AC007B023D /* ISO8601Serialization.m in Sources */,
+				3A0A27701BD7E3B0007B023D /* NSDate+ISO8601.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +801,52 @@
 			};
 			name = Release;
 		};
+		3AE36ED71BD5C3B90017A780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ISO8601/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ISO8601;
+				PRODUCT_NAME = ISO8601;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		3AE36ED81BD5C3B90017A780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ISO8601/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ISO8601;
+				PRODUCT_NAME = ISO8601;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -792,6 +900,15 @@
 			buildConfigurations = (
 				366B5E721B30C311002808D3 /* Debug */,
 				366B5E731B30C311002808D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE36ED91BD5C3B90017A780 /* Build configuration list for PBXNativeTarget "ISO8601-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE36ED71BD5C3B90017A780 /* Debug */,
+				3AE36ED81BD5C3B90017A780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
