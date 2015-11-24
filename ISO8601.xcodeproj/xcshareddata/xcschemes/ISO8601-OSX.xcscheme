@@ -16,21 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "212539B51B1595FD00F29EF3"
                BuildableName = "ISO8601.framework"
-               BlueprintName = "OSX"
-               ReferencedContainer = "container:ISO8601.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212539BF1B1595FD00F29EF3"
-               BuildableName = "ISO8601Tests-OSX.xctest"
-               BlueprintName = "OSXTests"
+               BlueprintName = "ISO8601-OSX"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "212539BF1B1595FD00F29EF3"
                BuildableName = "ISO8601Tests-OSX.xctest"
-               BlueprintName = "OSXTests"
+               BlueprintName = "ISO8601Tests-OSX"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "212539B51B1595FD00F29EF3"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "ISO8601-OSX"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "212539B51B1595FD00F29EF3"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "ISO8601-OSX"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "212539B51B1595FD00F29EF3"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "ISO8601-OSX"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
