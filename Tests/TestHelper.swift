@@ -9,7 +9,7 @@
 import ISO8601
 import Foundation
 
-func parse(string: String) -> NSDateComponents {
+func parse(string: String) -> NSDateComponents? {
 	return ISO8601Serialization.dateComponentsForString(string)
 }
 

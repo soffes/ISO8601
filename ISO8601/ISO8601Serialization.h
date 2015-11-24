@@ -23,7 +23,7 @@
  
  @return An object containing the date components for a given ISO8601 string.
  */
-+ (NSDateComponents *)dateComponentsForString:(NSString *)string;
++ (NSDateComponents * _Nullable)dateComponentsForString:(NSString * _Nonnull)string;
 
 
 #pragma mark - Writing
@@ -35,6 +35,6 @@
  
  @return A string containing the date components as an ISO8601 string.
  */
-+ (NSString *)stringForDateComponents:(NSDateComponents *)components;
++ (NSString * _Nonnull)stringForDateComponents:(NSDateComponents * _Nonnull)components;
 
 @end
