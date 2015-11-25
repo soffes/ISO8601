@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212539B51B1595FD00F29EF3"
+               BlueprintIdentifier = "21B3A3D619894F4600322041"
                BuildableName = "ISO8601.framework"
-               BlueprintName = "OSX"
+               BlueprintName = "iOS"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,27 +28,27 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212539BF1B1595FD00F29EF3"
-               BuildableName = "ISO8601Tests-OSX.xctest"
-               BlueprintName = "OSXTests"
+               BlueprintIdentifier = "21B3A3E119894F4600322041"
+               BuildableName = "ISO8601Tests-iOS.xctest"
+               BlueprintName = "iOSTests"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212539BF1B1595FD00F29EF3"
-               BuildableName = "ISO8601Tests-OSX.xctest"
-               BlueprintName = "OSXTests"
+               BlueprintIdentifier = "21B3A3E119894F4600322041"
+               BuildableName = "ISO8601Tests-iOS.xctest"
+               BlueprintName = "iOSTests"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "212539B51B1595FD00F29EF3"
+            BlueprintIdentifier = "21B3A3D619894F4600322041"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "iOS"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,11 +66,11 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -78,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "212539B51B1595FD00F29EF3"
+            BlueprintIdentifier = "21B3A3D619894F4600322041"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "iOS"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -88,17 +88,17 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "212539B51B1595FD00F29EF3"
+            BlueprintIdentifier = "21B3A3D619894F4600322041"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "OSX"
+            BlueprintName = "iOS"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
