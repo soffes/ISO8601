@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21B3A3D619894F4600322041"
+               BlueprintIdentifier = "AC7081F51C175F9D003F1999"
                BuildableName = "ISO8601.framework"
-               BlueprintName = "iOS"
-               ReferencedContainer = "container:ISO8601.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21B3A3E119894F4600322041"
-               BuildableName = "ISO8601Tests-iOS.xctest"
-               BlueprintName = "iOSTests"
+               BlueprintName = "watchOS"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21B3A3E119894F4600322041"
-               BuildableName = "ISO8601Tests-iOS.xctest"
-               BlueprintName = "iOSTests"
-               ReferencedContainer = "container:ISO8601.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "21B3A3D619894F4600322041"
-            BuildableName = "ISO8601.framework"
-            BlueprintName = "iOS"
-            ReferencedContainer = "container:ISO8601.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -78,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "21B3A3D619894F4600322041"
+            BlueprintIdentifier = "AC7081F51C175F9D003F1999"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "iOS"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "21B3A3D619894F4600322041"
+            BlueprintIdentifier = "AC7081F51C175F9D003F1999"
             BuildableName = "ISO8601.framework"
-            BlueprintName = "iOS"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:ISO8601.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
