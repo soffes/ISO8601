@@ -13,7 +13,7 @@ func parse(string: String) -> NSDateComponents? {
 	return ISO8601Serialization.dateComponentsForString(string)
 }
 
-func serialize(components: NSDateComponents) -> String {
+func serialize(components: NSDateComponents) -> String? {
 	return  ISO8601Serialization.stringForDateComponents(components)
 }
 

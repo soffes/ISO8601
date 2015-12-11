@@ -162,5 +162,8 @@ class SerializationTests: XCTestCase {
 		XCTAssertEqual("2011-12-13T17:17:00-06:00", serialize(components(year: 2011, month: 12, day: 13, hour: 17, minute: 17, second: 0, timeZoneOffset: -6 * 60 * 60)))
 		XCTAssertEqual("2013-06-27T15:39:32Z", serialize(components(year: 2013, month: 6, day: 27, hour: 15, minute: 39, second: 32, timeZoneOffset: 0)))
 		XCTAssertEqual("2014-03-18T20:00:00-07:00", serialize(components(year: 2014, month: 3, day: 18, hour: 20, minute: 0, second: 0, timeZoneOffset: -7 * 60 * 60)))
+		XCTAssertEqual("2014-03-18", serialize(components(year: 2014, month: 3, day: 18)))
+		XCTAssertEqual("23:55:21", serialize(components(hour: 23, minute: 55, second: 21)))
+		XCTAssertEqual(nil, serialize(components()))
 	}
 }
