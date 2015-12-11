@@ -180,9 +180,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		212539B51B1595FD00F29EF3 /* OSX */ = {
+		212539B51B1595FD00F29EF3 /* ISO8601-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "OSX" */;
+			buildConfigurationList = 212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSX" */;
 			buildPhases = (
 				212539B11B1595FD00F29EF3 /* Sources */,
 				212539B21B1595FD00F29EF3 /* Frameworks */,
@@ -193,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = OSX;
+			name = "ISO8601-OSX";
 			productName = ISO8601;
 			productReference = 212539B61B1595FD00F29EF3 /* ISO8601.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		212539BF1B1595FD00F29EF3 /* OSXTests */ = {
+		212539BF1B1595FD00F29EF3 /* ISO8601-OSXTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "OSXTests" */;
+			buildConfigurationList = 212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSXTests" */;
 			buildPhases = (
 				212539BC1B1595FD00F29EF3 /* Sources */,
 				212539BD1B1595FD00F29EF3 /* Frameworks */,
@@ -211,14 +211,14 @@
 			dependencies = (
 				212539C31B1595FD00F29EF3 /* PBXTargetDependency */,
 			);
-			name = OSXTests;
+			name = "ISO8601-OSXTests";
 			productName = ISO8601Tests;
 			productReference = 212539C01B1595FD00F29EF3 /* ISO8601Tests-OSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		21B3A3D619894F4600322041 /* iOS */ = {
+		21B3A3D619894F4600322041 /* ISO8601-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B3A3ED19894F4600322041 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 21B3A3ED19894F4600322041 /* Build configuration list for PBXNativeTarget "ISO8601-iOS" */;
 			buildPhases = (
 				21B3A3D219894F4600322041 /* Sources */,
 				21B3A3D319894F4600322041 /* Frameworks */,
@@ -229,14 +229,14 @@
 			);
 			dependencies = (
 			);
-			name = iOS;
+			name = "ISO8601-iOS";
 			productName = ISO8601;
 			productReference = 21B3A3D719894F4600322041 /* ISO8601.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		21B3A3E119894F4600322041 /* iOSTests */ = {
+		21B3A3E119894F4600322041 /* ISO8601-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B3A3F019894F4600322041 /* Build configuration list for PBXNativeTarget "iOSTests" */;
+			buildConfigurationList = 21B3A3F019894F4600322041 /* Build configuration list for PBXNativeTarget "ISO8601-iOSTests" */;
 			buildPhases = (
 				21B3A3DE19894F4600322041 /* Sources */,
 				21B3A3DF19894F4600322041 /* Frameworks */,
@@ -248,7 +248,7 @@
 				21B3A3E519894F4600322041 /* PBXTargetDependency */,
 				218E3E44198952D900E40A41 /* PBXTargetDependency */,
 			);
-			name = iOSTests;
+			name = "ISO8601-iOSTests";
 			productName = ISO8601Tests;
 			productReference = 21B3A3E219894F4600322041 /* ISO8601Tests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -290,10 +290,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21B3A3D619894F4600322041 /* iOS */,
-				21B3A3E119894F4600322041 /* iOSTests */,
-				212539B51B1595FD00F29EF3 /* OSX */,
-				212539BF1B1595FD00F29EF3 /* OSXTests */,
+				21B3A3D619894F4600322041 /* ISO8601-iOS */,
+				21B3A3E119894F4600322041 /* ISO8601-iOSTests */,
+				212539B51B1595FD00F29EF3 /* ISO8601-OSX */,
+				212539BF1B1595FD00F29EF3 /* ISO8601-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,17 +373,17 @@
 /* Begin PBXTargetDependency section */
 		212539C31B1595FD00F29EF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 212539B51B1595FD00F29EF3 /* OSX */;
+			target = 212539B51B1595FD00F29EF3 /* ISO8601-OSX */;
 			targetProxy = 212539C21B1595FD00F29EF3 /* PBXContainerItemProxy */;
 		};
 		218E3E44198952D900E40A41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21B3A3D619894F4600322041 /* iOS */;
+			target = 21B3A3D619894F4600322041 /* ISO8601-iOS */;
 			targetProxy = 218E3E43198952D900E40A41 /* PBXContainerItemProxy */;
 		};
 		21B3A3E519894F4600322041 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21B3A3D619894F4600322041 /* iOS */;
+			target = 21B3A3D619894F4600322041 /* ISO8601-iOS */;
 			targetProxy = 21B3A3E419894F4600322041 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -634,7 +634,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "OSX" */ = {
+		212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				212539CA1B1595FD00F29EF3 /* Debug */,
@@ -643,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "OSXTests" */ = {
+		212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSXTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				212539CD1B1595FD00F29EF3 /* Debug */,
@@ -661,7 +661,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B3A3ED19894F4600322041 /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		21B3A3ED19894F4600322041 /* Build configuration list for PBXNativeTarget "ISO8601-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21B3A3EE19894F4600322041 /* Debug */,
@@ -670,7 +670,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B3A3F019894F4600322041 /* Build configuration list for PBXNativeTarget "iOSTests" */ = {
+		21B3A3F019894F4600322041 /* Build configuration list for PBXNativeTarget "ISO8601-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21B3A3F119894F4600322041 /* Debug */,
