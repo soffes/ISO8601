@@ -10,7 +10,7 @@
 
 @implementation ISO8601Serialization
 
-+ (NSDateComponents * _Nullable)dateComponentsForString:(NSString * _Nonnull)string {
++ (NSDateComponents * __nullable)dateComponentsForString:(NSString * __nonnull)string {
 	NSScanner *scanner = [[NSScanner alloc] initWithString:string];
 	scanner.charactersToBeSkipped = nil;
 	
@@ -126,7 +126,7 @@
 }
 
 
-+ (NSString * __nullable)stringForDateComponents:(NSDateComponents * _Nonnull)components {
++ (NSString * __nullable)stringForDateComponents:(NSDateComponents * __nonnull)components {
 	NSString *string = @"";
 	BOOL hasDate = components.year != NSDateComponentUndefined || components.month != NSDateComponentUndefined || components.day != NSDateComponentUndefined;
 	BOOL hasTime = components.hour != NSDateComponentUndefined || components.minute != NSDateComponentUndefined || components.second != NSDateComponentUndefined || components.timeZone;

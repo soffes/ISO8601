@@ -13,12 +13,12 @@
 
 #pragma mark - Reading
 
-+ (NSDate * _Nullable)dateWithISO8601String:(NSString *)string {
++ (NSDate * __nullable)dateWithISO8601String:(NSString *)string {
 	return [self dateWithISO8601String:string timeZone:nil usingCalendar:nil];
 }
 
 
-+ (NSDate * _Nullable)dateWithISO8601String:(NSString * _Nonnull)string timeZone:(inout NSTimeZone * _Nonnull * _Nullable)timeZone usingCalendar:(NSCalendar * _Nullable)calendar {
++ (NSDate * __nullable)dateWithISO8601String:(NSString * __nonnull)string timeZone:(inout NSTimeZone * __nonnull * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
 	NSDateComponents *components = [ISO8601Serialization dateComponentsForString:string];
 	if (components == nil) {
 		return nil;
@@ -43,18 +43,18 @@
 
 #pragma mark - Writing
 
-- (NSString * _Nonnull)ISO8601String {
+- (NSString * __nullable)ISO8601String {
 	return [self ISO8601StringWithTimeZone:[NSTimeZone localTimeZone] usingCalendar:nil];
 }
 
 
-- (NSString * _Nonnull)ISO8601StringWithTimeZone:(NSTimeZone * _Nullable)timeZone usingCalendar:(NSCalendar * _Nullable)calendar {
+- (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
 	if (!calendar) {
 		calendar = [NSCalendar currentCalendar];
 	}
 
 	if (timeZone) {
-		calendar.timeZone = (NSTimeZone * _Nonnull)timeZone;
+		calendar.timeZone = (NSTimeZone * __nonnull)timeZone;
 	} else {
 		calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 	}
