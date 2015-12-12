@@ -149,9 +149,11 @@
 	if (!timeZone) {
 		return string;
 	}
-	
-	if (timeZone.secondsFromGMT != 0) {
-		NSInteger hoursOffset = timeZone.secondsFromGMT / 3600;
+
+	NSDate *date = [components.calendar dateFromComponents:components];
+	NSInteger secondsOffset = [timeZone secondsFromGMTForDate:date];
+	if (secondsOffset != 0) {
+		NSInteger hoursOffset = secondsOffset / 3600;
 		
 		// TODO: Assuming whole hour offsets at the moment
 		NSUInteger secondsOffset = 0;

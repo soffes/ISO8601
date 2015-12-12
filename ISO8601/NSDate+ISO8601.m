@@ -63,6 +63,7 @@
 		NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
 	
 	NSDateComponents *dateComponents = [calendar components:units fromDate:self];
+	dateComponents.calendar = calendar;
 	return [ISO8601Serialization stringForDateComponents:dateComponents];
 }
 
