@@ -110,6 +110,7 @@
 				21B3A3D819894F4600322041 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		21B3A3D819894F4600322041 /* Products */ = {
 			isa = PBXGroup;

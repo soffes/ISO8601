@@ -13,55 +13,55 @@
 + (NSDateComponents * __nullable)dateComponentsForString:(NSString * __nonnull)string {
 	NSScanner *scanner = [[NSScanner alloc] initWithString:string];
 	scanner.charactersToBeSkipped = nil;
-	
+
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-	
+
 	// Year
 	NSInteger year;
 	if (![scanner scanInteger:&year]) {
 		return nil;
 	}
 	dateComponents.year = year;
-	
+
 	// Month
 	if (![scanner scanString:@"-" intoString:nil]) {
 		return dateComponents;
 	}
-	
+
 	NSInteger month;
 	if (![scanner scanInteger:&month]) {
 		return dateComponents;
 	}
 	dateComponents.month = month;
-	
+
 	// Day
 	if (![scanner scanString:@"-" intoString:nil]) {
 		return dateComponents;
 	}
-	
+
 	NSInteger day;
 	if (![scanner scanInteger:&day]) {
 		return dateComponents;
 	}
 	dateComponents.day = day;
-	
+
 	// Time
 	if (![scanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"T "] intoString:nil]) {
 		return dateComponents;
 	}
-	
+
 	// Hour
 	NSInteger hour;
 	if (![scanner scanInteger:&hour]) {
 		return dateComponents;
 	}
 	dateComponents.hour = hour;
-	
+
 	// Minute
 	if (![scanner scanString:@":" intoString:nil]) {
 		return dateComponents;
 	}
-	
+
 	NSInteger minute;
 	if (![scanner scanInteger:&minute]) {
 		return dateComponents;
@@ -89,10 +89,10 @@
 		dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 		return dateComponents;
 	}
-	
+
 	// Move back to end of time
 	scanner.scanLocation = scannerLocation;
-	
+
 	// Look for offset
 	NSCharacterSet *signs = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
 	[scanner scanUpToCharactersFromSet:signs intoString:nil];
@@ -100,7 +100,7 @@
 	if (![scanner scanCharactersFromSet:signs intoString:&sign]) {
 		return dateComponents;
 	}
-	
+
 	// Offset hour
 	NSInteger timeZoneOffset = 0;
 	NSInteger timeZoneOffsetHour = 0;
@@ -108,7 +108,7 @@
 	if (![scanner scanInteger:&timeZoneOffsetHour]) {
 		return dateComponents;
 	}
-	
+
 	// Check for colon
 	BOOL colonExists = [scanner scanString:@":" intoString:nil];
 	if (!colonExists && timeZoneOffsetHour > 14) {
@@ -149,17 +149,17 @@
 	if (!timeZone) {
 		return string;
 	}
-	
+
 	if (timeZone.secondsFromGMT != 0) {
 		NSInteger hoursOffset = timeZone.secondsFromGMT / 3600;
-		
+
 		// TODO: Assuming whole hour offsets at the moment
 		NSUInteger secondsOffset = 0;
-		
+
 		NSString *sign = (hoursOffset >= 0) ? @"+" : @"-";
 		return [string stringByAppendingFormat:@"%@%02i:%02i", sign, abs((int)hoursOffset), (int)secondsOffset];
 	}
-	
+
 	return [string stringByAppendingString:@"Z"];
 }
 

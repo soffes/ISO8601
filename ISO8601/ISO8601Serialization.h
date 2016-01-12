@@ -18,9 +18,9 @@
 
 /**
  Create date components from an ISO8601 string.
- 
+
  @param string An ISO8601 string.
- 
+
  @return An object containing the date components for a given ISO8601 string.
  */
 + (NSDateComponents * __nullable)dateComponentsForString:(NSString * __nonnull)string;
@@ -30,9 +30,9 @@
 
 /**
  Create an ISO8601 string from date components.
- 
+
  @param components Date components to use.
- 
+
  @return A string containing the date components as an ISO8601 string.
  */
 + (NSString * __nullable)stringForDateComponents:(NSDateComponents * __nonnull)components;
