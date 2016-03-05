@@ -8,5 +8,5 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
 
   spec.frameworks = 'Foundation'
-  spec.source_files = 'ISO8601/**/*.{h,m}'
+  spec.source_files = 'Sources/*.{h,m}'
 end

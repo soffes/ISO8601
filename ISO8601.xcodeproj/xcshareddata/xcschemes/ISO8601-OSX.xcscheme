@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "212539BF1B1595FD00F29EF3"
                BuildableName = "ISO8601Tests-OSX.xctest"
-               BlueprintName = "ISO8601-OSXTests"
+               BlueprintName = "ISO8601Tests-OSX"
                ReferencedContainer = "container:ISO8601.xcodeproj">
             </BuildableReference>
          </TestableReference>
