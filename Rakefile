@@ -7,13 +7,6 @@ end
 
 task :default => :test
 
-desc 'Print test coverage of the last test run.'
-task :coverage do
-  require_binary 'slather', 'bundle install'
-  sh 'slather coverage -s'
-end
-
-
 private
 
 def require_binary(binary, install)
@@ -23,10 +16,5 @@ def require_binary(binary, install)
 end
 
 def version
-  begin
-    require 'plist'
-    Plist::parse_xml('ISO8601/Info.plist')['CFBundleShortVersionString']
-  rescue LoadError
-    fail "\nERROR: You need to run Bundler. Please run the following command:\n\n    $ bundle install\n\nYou may need to install Bundler with `gem install bundler`.\n"
-  end
+  `/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "Support/Info.plist"`.chomp
 end
