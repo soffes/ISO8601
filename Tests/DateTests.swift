@@ -11,7 +11,7 @@ import XCTest
 
 class DateTests: XCTestCase {
 	func testReading() {
-		var timeZone: NSTimeZone?
+		var timeZone: TimeZone?
 		XCTAssertEqual(NSDate(ISO8601String: "2014-07-30T22:35:23Z", timeZone: &timeZone, usingCalendar: nil), NSDate(timeIntervalSince1970: 1406759723))
 		XCTAssertEqual(timeZone!.secondsFromGMT, 0)
 
