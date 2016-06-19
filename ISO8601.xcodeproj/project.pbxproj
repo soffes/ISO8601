@@ -251,9 +251,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		212539B51B1595FD00F29EF3 /* ISO8601-OSX */ = {
+		212539B51B1595FD00F29EF3 /* ISO8601-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSX" */;
+			buildConfigurationList = 212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-macOS" */;
 			buildPhases = (
 				212539B11B1595FD00F29EF3 /* Sources */,
 				212539B21B1595FD00F29EF3 /* Frameworks */,
@@ -264,14 +264,14 @@
 			);
 			dependencies = (
 			);
-			name = "ISO8601-OSX";
+			name = "ISO8601-macOS";
 			productName = ISO8601;
 			productReference = 212539B61B1595FD00F29EF3 /* ISO8601.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		212539BF1B1595FD00F29EF3 /* ISO8601Tests-OSX */ = {
+		212539BF1B1595FD00F29EF3 /* ISO8601Tests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601Tests-OSX" */;
+			buildConfigurationList = 212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601Tests-macOS" */;
 			buildPhases = (
 				212539BC1B1595FD00F29EF3 /* Sources */,
 				212539BD1B1595FD00F29EF3 /* Frameworks */,
@@ -282,7 +282,7 @@
 			dependencies = (
 				212539C31B1595FD00F29EF3 /* PBXTargetDependency */,
 			);
-			name = "ISO8601Tests-OSX";
+			name = "ISO8601Tests-macOS";
 			productName = ISO8601Tests;
 			productReference = 212539C01B1595FD00F29EF3 /* ISO8601Tests-OSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -426,8 +426,8 @@
 			targets = (
 				21B3A3D619894F4600322041 /* ISO8601-iOS */,
 				21B3A3E119894F4600322041 /* ISO8601Tests-iOS */,
-				212539B51B1595FD00F29EF3 /* ISO8601-OSX */,
-				212539BF1B1595FD00F29EF3 /* ISO8601Tests-OSX */,
+				212539B51B1595FD00F29EF3 /* ISO8601-macOS */,
+				212539BF1B1595FD00F29EF3 /* ISO8601Tests-macOS */,
 				21EC4F361D077FCE00FA439F /* ISO8601-tvOS */,
 				21EC4F3F1D077FCE00FA439F /* ISO8601Tests-tvOS */,
 				2175D2B21D171ED9009C6845 /* ISO8601-watchOS */,
@@ -560,7 +560,7 @@
 /* Begin PBXTargetDependency section */
 		212539C31B1595FD00F29EF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 212539B51B1595FD00F29EF3 /* ISO8601-OSX */;
+			target = 212539B51B1595FD00F29EF3 /* ISO8601-macOS */;
 			targetProxy = 212539C21B1595FD00F29EF3 /* PBXContainerItemProxy */;
 		};
 		218E3E44198952D900E40A41 /* PBXTargetDependency */ = {
@@ -952,7 +952,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-OSX" */ = {
+		212539C91B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				212539CA1B1595FD00F29EF3 /* Debug */,
@@ -961,7 +961,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601Tests-OSX" */ = {
+		212539CC1B1595FD00F29EF3 /* Build configuration list for PBXNativeTarget "ISO8601Tests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				212539CD1B1595FD00F29EF3 /* Debug */,
