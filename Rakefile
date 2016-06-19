@@ -2,7 +2,7 @@ desc 'Run the tests'
 task :test do
   require_binary 'xcodebuild', 'brew install xcodebuild'
   require_binary 'xcpretty', 'bundle install'
-  sh 'xcodebuild test -project ISO8601.xcodeproj -scheme ISO8601-OSX | bundle exec xcpretty --color; exit ${PIPESTATUS[0]}'
+  sh 'xcodebuild test -project ISO8601.xcodeproj -scheme ISO8601-macOS | bundle exec xcpretty --color; exit ${PIPESTATUS[0]}'
 end
 
 task :default => :test
