@@ -25,5 +25,10 @@ class DateTests: XCTestCase {
 
 	func testWriting() {
 		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723).ISO8601StringWithTimeZone(nil, usingCalendar: nil), "2014-07-30T22:35:23Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723).ISO8601StringWithTimeZone(nil, usingCalendar: nil, includeMicroseconds: true), "2014-07-30T22:35:23.000000Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723.123).ISO8601StringWithTimeZone(nil, usingCalendar: nil, includeMicroseconds: true), "2014-07-30T22:35:23.123000Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723.123456).ISO8601StringWithTimeZone(nil, usingCalendar: nil, includeMicroseconds: true), "2014-07-30T22:35:23.123456Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723.1234567).ISO8601StringWithTimeZone(nil, usingCalendar: nil, includeMicroseconds: true), "2014-07-30T22:35:23.123457Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723.1234564).ISO8601StringWithTimeZone(nil, usingCalendar: nil, includeMicroseconds: true), "2014-07-30T22:35:23.123456Z")
 	}
 }
