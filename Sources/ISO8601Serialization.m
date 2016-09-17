@@ -8,6 +8,8 @@
 
 #import "ISO8601Serialization.h"
 
+static const NSInteger kNanosecondsInMicrosecond = 1000;
+
 @implementation ISO8601Serialization
 
 + (NSDateComponents * __nullable)dateComponentsForString:(NSString * __nonnull)string {
@@ -80,6 +82,20 @@
 		scanner.scanLocation = scannerLocation;
 	}
 
+	// Microsecond
+	scannerLocation = scanner.scanLocation;
+	if ([scanner scanString:@"." intoString:nil]) {
+		NSString *decimalString = nil;
+		if (![scanner scanCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:&decimalString]) {
+			return dateComponents;
+		}
+		NSString *paddedString = [decimalString stringByPaddingToLength:6 withString:@"0" startingAtIndex:0];
+		NSInteger microseconds = paddedString.integerValue;
+		dateComponents.nanosecond = microseconds * kNanosecondsInMicrosecond;
+	} else {
+		scanner.scanLocation = scannerLocation;
+	}
+
 	// Zulu
 	scannerLocation = scanner.scanLocation;
 	[scanner scanUpToString:@"Z" intoString:nil];
@@ -130,19 +146,24 @@
 	NSString *string = @"";
 	BOOL hasDate = components.year != NSDateComponentUndefined || components.month != NSDateComponentUndefined || components.day != NSDateComponentUndefined;
 	BOOL hasTime = components.hour != NSDateComponentUndefined || components.minute != NSDateComponentUndefined || components.second != NSDateComponentUndefined || components.timeZone;
+	BOOL hasNanoseconds = components.nanosecond != NSDateComponentUndefined;
 	if (!hasDate && !hasTime) {
 		return nil;
 	}
 	if (hasDate) {
-		string = [string stringByAppendingFormat:@"%04li-%02i-%02i", (long)components.year,
-		                                                              (int)components.month,
-		                                                              (int)components.day];
+		string = [string stringByAppendingFormat:@"%04li-%02li-%02li", (long)components.year,
+		                                                               (long)components.month,
+		                                                               (long)components.day];
 	}
 	if (hasTime) {
-		string = [string stringByAppendingFormat:@"%@%02i:%02i:%02i", hasDate ? @"T" : @"",
-		                                                              (int)components.hour,
-		                                                              (int)components.minute,
-		                                                              (int)components.second];
+		string = [string stringByAppendingFormat:@"%@%02li:%02li:%02li", hasDate ? @"T" : @"",
+		                                                                 (long)components.hour,
+		                                                                 (long)components.minute,
+		                                                                 (long)components.second];
+	}
+	if (hasNanoseconds) {
+		NSInteger microseconds = lround((double)components.nanosecond / kNanosecondsInMicrosecond);
+		string = [string stringByAppendingFormat:@".%06li", (long)microseconds];
 	}
 
 	NSTimeZone *timeZone = components.timeZone;
