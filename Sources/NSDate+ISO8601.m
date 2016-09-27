@@ -21,7 +21,7 @@ static NSCalendar *ISO8601Calendar(NSTimeZone *__nullable timeZone){
 	if (!calendar) {
 		calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierISO8601];
 		calendar.timeZone = timeZone ? (NSTimeZone *__nonnull)timeZone : [NSTimeZone timeZoneForSecondsFromGMT:0];
-		[cache setObject:calendar forKey:@(timeZone.secondsFromGMT)];
+		[cache setObject:calendar forKey:key];
 	}
 
 	return calendar;
