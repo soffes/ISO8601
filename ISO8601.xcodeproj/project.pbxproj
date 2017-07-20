@@ -402,6 +402,7 @@
 					};
 					21B3A3E119894F4600322041 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 21B3A3D619894F4600322041;
 					};
 					21EC4F361D077FCE00FA439F = {
@@ -753,6 +754,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -797,6 +799,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -856,6 +859,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samsoffes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "ISO8601Tests-iOS";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -866,6 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samsoffes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "ISO8601Tests-iOS";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -977,6 +982,7 @@
 				2175D2B91D171ED9009C6845 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21B3A3D119894F4600322041 /* Build configuration list for PBXProject "ISO8601" */ = {
 			isa = XCConfigurationList;
