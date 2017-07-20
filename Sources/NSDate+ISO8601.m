@@ -9,6 +9,24 @@
 #import "NSDate+ISO8601.h"
 #import "ISO8601Serialization.h"
 
+static NSCalendar *ISO8601Calendar(NSTimeZone *__nullable timeZone){
+	static dispatch_once_t onceToken;
+	static NSCache *cache;
+	dispatch_once(&onceToken, ^{
+		cache = [NSCache new];
+	});
+
+	id key = @(timeZone.secondsFromGMT);
+	NSCalendar *calendar = [cache objectForKey:key];
+	if (!calendar) {
+		calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierISO8601];
+		calendar.timeZone = timeZone ? (NSTimeZone *__nonnull)timeZone : [NSTimeZone timeZoneForSecondsFromGMT:0];
+		[cache setObject:calendar forKey:key];
+	}
+
+	return calendar;
+}
+
 @implementation NSDate (ISO8601)
 
 #pragma mark - Reading
@@ -18,24 +36,22 @@
 }
 
 
-+ (NSDate * __nullable)dateWithISO8601String:(NSString * __nonnull)string timeZone:(inout NSTimeZone * __nonnull * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
++ (NSDate * __nullable)dateWithISO8601String:(NSString * __nonnull)string timeZone:(inout NSTimeZone * __nonnull * __nullable)timeZonePtr usingCalendar:(NSCalendar * __nullable)calendar {
 	NSDateComponents *components = [ISO8601Serialization dateComponentsForString:string];
 	if (components == nil) {
 		return nil;
 	}
 
+	NSTimeZone *timeZone = components.timeZone ? components.timeZone : [NSTimeZone timeZoneForSecondsFromGMT:0];
+	if (timeZonePtr) {
+		*timeZonePtr = timeZone;
+	}
+
 	if (!calendar) {
-		calendar = [NSCalendar currentCalendar];
+		calendar = ISO8601Calendar(timeZone);
+	} else {
+		calendar.timeZone = timeZone;
 	}
-
-	NSTimeZone *UTCTimeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-
-	if (timeZone) {
-		*timeZone = components.timeZone ? components.timeZone : UTCTimeZone;
-	}
-
-	// Use a UTC calendar to generate the date
-	calendar.timeZone = UTCTimeZone;
 
 	return [calendar dateFromComponents:components];
 }
@@ -50,13 +66,7 @@
 
 - (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
 	if (!calendar) {
-		calendar = [NSCalendar currentCalendar];
-	}
-
-	if (timeZone) {
-		calendar.timeZone = (NSTimeZone * __nonnull)timeZone;
-	} else {
-		calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+		calendar = ISO8601Calendar(timeZone);
 	}
 
 	NSCalendarUnit units = (NSCalendarUnit)(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
