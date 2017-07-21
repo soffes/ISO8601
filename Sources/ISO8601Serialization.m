@@ -80,6 +80,18 @@
 		scanner.scanLocation = scannerLocation;
 	}
 
+	// Millisecond
+	scannerLocation = scanner.scanLocation;
+	if ([scanner scanString:@"." intoString:nil]) {
+		NSInteger nanosecond;
+		if (![scanner scanInteger:&nanosecond]) {
+			return dateComponents;
+		}
+		dateComponents.nanosecond = nanosecond;
+	} else {
+		scanner.scanLocation = scannerLocation;
+	}
+
 	// Zulu
 	scannerLocation = scanner.scanLocation;
 	[scanner scanUpToString:@"Z" intoString:nil];
@@ -130,6 +142,7 @@
 	NSString *string = @"";
 	BOOL hasDate = components.year != NSDateComponentUndefined || components.month != NSDateComponentUndefined || components.day != NSDateComponentUndefined;
 	BOOL hasTime = components.hour != NSDateComponentUndefined || components.minute != NSDateComponentUndefined || components.second != NSDateComponentUndefined || components.timeZone;
+	BOOL hasNanosecond = components.nanosecond != NSDateComponentUndefined;
 	if (!hasDate && !hasTime) {
 		return nil;
 	}
@@ -143,6 +156,9 @@
 		                                                              (int)components.hour,
 		                                                              (int)components.minute,
 		                                                              (int)components.second];
+	}
+	if (hasNanosecond) {
+		string = [string stringByAppendingFormat:@".%03i", (int)components.nanosecond];
 	}
 
 	NSTimeZone *timeZone = components.timeZone;

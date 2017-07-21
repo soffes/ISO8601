@@ -44,11 +44,11 @@
 #pragma mark - Writing
 
 - (NSString * __nullable)ISO8601String {
-	return [self ISO8601StringWithTimeZone:[NSTimeZone localTimeZone] usingCalendar:nil];
+	return [self ISO8601StringWithTimeZone:[NSTimeZone localTimeZone] usingCalendar:nil includeMilliSeconds:NO];
 }
 
 
-- (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
+- (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar includeMilliSeconds:(BOOL)includeMilliSeconds {
 	if (!calendar) {
 		calendar = [NSCalendar currentCalendar];
 	}
@@ -61,6 +61,9 @@
 
 	NSCalendarUnit units = (NSCalendarUnit)(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
 		NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
+	if (includeMilliSeconds) {
+		units |= NSCalendarUnitNanosecond;
+	}
 
 	NSDateComponents *dateComponents = [calendar components:units fromDate:self];
 	return [ISO8601Serialization stringForDateComponents:dateComponents];

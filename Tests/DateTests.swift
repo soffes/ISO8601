@@ -24,6 +24,7 @@ class DateTests: XCTestCase {
     }
 
 	func testWriting() {
-		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723).iso8601String(with: nil, using: nil), "2014-07-30T22:35:23Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723).iso8601String(with: nil, using: nil, includeMilliSeconds: false), "2014-07-30T22:35:23Z")
+		XCTAssertEqual(NSDate(timeIntervalSince1970: 1406759723).iso8601String(with: nil, using: nil, includeMilliSeconds: true), "2014-07-30T22:35:23.000Z")
 	}
 }

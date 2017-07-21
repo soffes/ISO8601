@@ -60,6 +60,6 @@
 
  @return A string representation of the receiver in ISO8601 format in `timeZone`.
  */
-- (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar;
+- (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar includeMilliSeconds:(BOOL)includeMilliSeconds;
 
 @end
