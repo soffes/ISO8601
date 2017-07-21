@@ -17,7 +17,7 @@ func serialize(_ components: NSDateComponents) -> String? {
 	return  ISO8601Serialization.string(for: components as DateComponents)
 }
 
-func components(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil, timeZoneOffset: TimeInterval? = nil) -> NSDateComponents {
+func components(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil, millisecond: Int? = nil, timeZoneOffset: TimeInterval? = nil) -> NSDateComponents {
 	let comps = NSDateComponents()
 	if let year = year {
 		comps.year = year
@@ -41,6 +41,10 @@ func components(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int?
 
 	if let second = second {
 		comps.second = second
+	}
+
+	if let millisecond = millisecond {
+		comps.nanosecond = millisecond
 	}
 
 	if let timeZoneOffset = timeZoneOffset {
